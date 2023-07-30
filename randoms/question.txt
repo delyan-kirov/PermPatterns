@@ -1,0 +1,1 @@
+Given 2 matrices of positive integers, can Nauty find if one can be computed by the other by swapping rows and columns simultaneously.

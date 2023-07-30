@@ -1,0 +1,6 @@
+Bivincular patterns (as introduced in [9]) are vincular patterns which additionally require
+some values to be adjacent. More formally, an occurrence of the bivincular pattern (π, A) in
+σ is a subsequence σ(i1 ) . . . σ(ik ) of σ such that the following all hold:
+σ(i_1 ) . . . σ(i_k ) is an occurrence of π in the classical sense,
+∀a ∈ A. i_{a+1} = i_a + 1
+∀a ∈ A. σ(i_{π^-1(a+1)}) = σ(π^-1(i_a)) + 1
