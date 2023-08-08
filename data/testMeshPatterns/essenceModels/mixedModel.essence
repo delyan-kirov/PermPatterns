@@ -1,5 +1,6 @@
 $ This of mixed patterns to avoid
-given mesh_avoidance : set of (sequence(injective) of int, relation of (int * int), set of int)
+$ mesh_avoidance = permutation + mesh pieces + vincular/bivincular indices
+given mixed_avoidance : set of (sequence(injective) of int, relation of (int * int), set of int)
 
 $ The permutation we are searching for (1..length is the permutation)
 given length : int
