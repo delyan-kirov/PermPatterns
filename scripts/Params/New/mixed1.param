@@ -1,0 +1,12 @@
+$ mesh param file
+
+$ mesh_avoidance = permutation + mesh pieces + vincular indeces
+letting mixed_avoidance be { ( sequence(1,3,2), relation( (2, 1) ), {1} ) } 
+letting length be 4
+
+$ n Solution for avoidance should be:
+$ Avoiding pattern
+$ test
+
+$ Contains pattern but breaks mesh
+$ test
