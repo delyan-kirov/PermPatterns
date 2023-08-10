@@ -75,4 +75,34 @@ def visualize (points, indeces):
     points = generate_points(points)
     fig, ax = plot_lattice(points, indeces)
     plt.show()  # To display the final plot
+
+#%%
+def readSolutions():
+    # Open the solution file and print its contents
+    with open("solutions", "r") as solutions:
+        contents = solutions.read()
+    # markdownFile = "```" + contents + "```"
+    # display(Markdown(markdownFile))
+
+    # Split the contents by the "language Essence" line to separate solutions
+    solution_blocks = contents.split("language Essence 1.3\n")
+
+    # Initialize a list to store the extracted sequences
+    sequences = []
+
+    # Iterate through each solution block
+    for solution_block in solution_blocks:
+        # Skip empty blocks
+        if solution_block.strip():
+            # Find the line containing "letting perm be sequence" and extract the sequence
+            sequence_line = [line for line in solution_block.splitlines() if "letting perm be sequence" in line]
+            if sequence_line:
+                sequence = sequence_line[0].split("sequence(")[1].split(")")[0]
+                sequence_list = [int(item) for item in sequence.split(", ")]
+                sequences.append(sequence_list)
+                
+    sequences = sorted(sequences)
+
+    print("\nNumber of sequences is: " + str(len(sequences)))
     
+    return sequences
