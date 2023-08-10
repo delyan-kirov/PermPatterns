@@ -70,7 +70,7 @@ def biVincularMesh (index, length):
         sequence.append((i - 1, index - 1))
     return sequence
 
-#%%
+#%% Could update this function to print a little nicer henstly
 def visualize (points, indeces):
     points = generate_points(points)
     fig, ax = plot_lattice(points, indeces)
@@ -106,3 +106,36 @@ def readSolutions():
     print("\nNumber of sequences is: " + str(len(sequences)))
     
     return sequences
+
+#%%
+def decompose(mesh:list, length:int) -> tuple:
+    rows = []
+    columns = []
+    
+    # find columns
+    for i in range(length + 1):
+        column = [(pair[0], pair[1]) for pair in mesh if pair[0] == i]
+        if len(column) == length:
+            columns.append(column)
+            
+    # find rows
+    for i in range(length + 1):
+        row = [(pair[0], pair[1]) for pair in mesh if pair[1] == i]
+        if len(row) == length:
+            rows.append(row)
+    
+    consecutives = len(columns) == length - 1
+    meshPieces = [pair for pair in mesh if pair not in flatten(rows + columns)]
+    
+    columnIndeces = {pair[0][0] for pair in columns}
+    rowIndeces = {pair[0][1] for pair in rows}
+        
+    vincular = (columnIndeces, rowIndeces)
+
+    print ("Vincular piece: " + str(vincular))
+    # print ("Row piece: " + str(rows))
+    # print("Column piece: " + str(columns))
+    print("Consecutive piece: " + str(consecutives))
+    print("Mesh piece: " + str(meshPieces))
+    
+    return (vincular, meshPieces)
