@@ -2,7 +2,7 @@ $ mesh pattern
 
 $ pattern for testing mixed pattern vs mesh
 letting mesh_avoidance be { ( sequence(1,3,2), relation( (1, 0), (1, 1), (1, 2), (1, 3) ) ) } 
-letting length be 4
+letting length be 8
 
 $ n Solution for avoidance should be:
 $ Avoiding pattern
