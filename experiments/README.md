@@ -6,4 +6,4 @@
     - bivincular
     - box
     - consecutive
-- See if there is any difference between consecutive and vicular
+- See if there is any difference between consecutive and vincular
