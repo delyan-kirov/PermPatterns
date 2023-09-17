@@ -1,15 +1,25 @@
 #! /usr/bin/bash
 
-mkdir temp
+mkdir -p temp
 
-cp ../models/mixed/avoidance/vincular.essence temp/
-cp ../params/mixed/avoidance/vincular/132_1.param temp/
-
-cd temp
-
-# Run the conjure solve command
-conjure solve -ac --number-of-solutions=all --solver=nbc_minisat_all vincular.essence 132_1.param
-
-# Optionally, you can clean up the temporary folder after solving
-cd ../
-rm -r temp
+# Use find to locate files within the directory and its subdirectories
+find ../params/mixed/avoidance/vincular -type f -print | while read -r file; do
+    echo "$file"
+    # Copy the found file to the temp folder
+    cp ../models/mixed/avoidance/vincular.essence temp/
+    cp "$file" temp/
+    cd temp
+    ls
+    # Extract the filename (without path) from the found file
+    filename=$(basename "$file")
+    # Run the conjure solve command with the found file
+    conjure solve -ac --number-of-solutions=all --solver=nbc_minisat_all vincular.essence "$filename"
+    newname=$(basename "$file" | sed 's/\.[^.]*$//')
+    mv conjure-output "$newname"
+    # Use find to delete files that don't match the newname
+    find ./ -maxdepth 1 -type f -print | while read -r file; do
+    # Delete each file
+    rm -v "$file"
+    done
+    cd ../
+done
