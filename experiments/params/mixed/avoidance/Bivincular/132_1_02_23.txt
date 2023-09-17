@@ -6,4 +6,4 @@ letting length be 4
 $ mesh_avoidance = permutation + mesh pieces + bivincular indeces
 $letting mesh_avoidance be {(sequence(1,3,2), relation((0,0),(1,0),(2,0),(3,0),(1,1),(1,2),(1,3),(0,2),(2,2),(3,2),(2,3))}
 
-letting bivincular_avoidance be {( sequence(1,3,2), relation( (2,3) ), ( {1}, {0,2} ) )}
+letting mixed_avoidance be {( sequence(1,3,2), relation( (2,3) ), ( {1}, {0,2} ) )}

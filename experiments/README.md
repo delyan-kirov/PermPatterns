@@ -7,3 +7,6 @@
     - box
     - consecutive
 - See if there is any difference between consecutive and vincular
+
+- Seems when conjure is creating the models, it makes them inside the folder containing the .essence file (or perhaps the file that was supplied first).
+When running the script it might be better to actually try and copy that file into the temp folder. 
