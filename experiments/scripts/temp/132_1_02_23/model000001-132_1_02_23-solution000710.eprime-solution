@@ -1,5 +1,0 @@
-language ESSENCE' 1.0
-
-letting permPadded be [0, 4, 3, 7, 6, 1, 2, 5, 8; int(0..8)]
-letting perm_ExplicitBounded_Length be 7
-letting perm_ExplicitBounded_Values be [4, 3, 7, 6, 1, 2, 5; int(1..7)]

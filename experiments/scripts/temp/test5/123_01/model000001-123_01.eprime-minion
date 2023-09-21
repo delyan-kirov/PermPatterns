@@ -1,0 +1,110 @@
+MINION 3
+# CSETopLevel_number = 0
+# CSETopLevel_eliminated_expressions = 0
+# CSETopLevel_total_size = 0
+# CSE_active_number = 28
+# CSE_active_eliminated_expressions = 115
+# CSE_active_total_size = 116
+**VARIABLES**
+DISCRETE perm_ExplicitBounded_Values_00001 #
+{1..5}
+DISCRETE perm_ExplicitBounded_Values_00002 #
+{1..5}
+DISCRETE perm_ExplicitBounded_Values_00003 #
+{1..5}
+DISCRETE perm_ExplicitBounded_Values_00004 #
+{1..5}
+DISCRETE perm_ExplicitBounded_Values_00005 #
+{1..5}
+BOOL aux1 #Active-CSE: 2 occurrences of this expression or equivalent: ((perm_ExplicitBounded_Values_00003<=perm_ExplicitBounded_Values_00004) /\ (perm_ExplicitBounded_Values_00005<=perm_ExplicitBounded_Values_00003))
+BOOL aux2 #Active-CSE: 2 occurrences of this expression or equivalent: ((perm_ExplicitBounded_Values_00004<=perm_ExplicitBounded_Values_00005) /\ (perm_ExplicitBounded_Values_00005<=perm_ExplicitBounded_Values_00003))
+BOOL aux3 #Active-CSE: 2 occurrences of this expression or equivalent: ((perm_ExplicitBounded_Values_00004<=perm_ExplicitBounded_Values_00003) /\ (perm_ExplicitBounded_Values_00005<=perm_ExplicitBounded_Values_00004))
+BOOL aux4 #Active-CSE: 2 occurrences of this expression or equivalent: ((perm_ExplicitBounded_Values_00001<=perm_ExplicitBounded_Values_00005) /\ (perm_ExplicitBounded_Values_00005<=perm_ExplicitBounded_Values_00004))
+BOOL aux5 #Active-CSE: 2 occurrences of this expression or equivalent: ((perm_ExplicitBounded_Values_00001<=perm_ExplicitBounded_Values_00004) /\ (perm_ExplicitBounded_Values_00004<=perm_ExplicitBounded_Values_00005))
+BOOL aux6 #Active-CSE: 2 occurrences of this expression or equivalent: ((perm_ExplicitBounded_Values_00001<=perm_ExplicitBounded_Values_00005) /\ (perm_ExplicitBounded_Values_00002<=perm_ExplicitBounded_Values_00001))
+BOOL aux7 #Active-CSE: 2 occurrences of this expression or equivalent: ((perm_ExplicitBounded_Values_00001<=perm_ExplicitBounded_Values_00003) /\ (perm_ExplicitBounded_Values_00003<=perm_ExplicitBounded_Values_00005))
+BOOL aux8 #Active-CSE: 2 occurrences of this expression or equivalent: ((perm_ExplicitBounded_Values_00001<=perm_ExplicitBounded_Values_00002) /\ (perm_ExplicitBounded_Values_00002<=perm_ExplicitBounded_Values_00005))
+BOOL aux9 #Active-CSE: 5 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00003<=perm_ExplicitBounded_Values_00005)
+BOOL aux10 #Active-CSE: 5 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00003<=perm_ExplicitBounded_Values_00004)
+BOOL aux11 #Active-CSE: 7 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00004<=perm_ExplicitBounded_Values_00002)
+BOOL aux12 #Active-CSE: 8 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00004<=perm_ExplicitBounded_Values_00003)
+BOOL aux13 #Active-CSE: 4 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00003<=perm_ExplicitBounded_Values_00001)
+BOOL aux14 #Active-CSE: 3 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00001<=perm_ExplicitBounded_Values_00004)
+BOOL aux15 #Active-CSE: 4 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00004<=perm_ExplicitBounded_Values_00005)
+BOOL aux16 #Active-CSE: 8 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00003<=perm_ExplicitBounded_Values_00002)
+BOOL aux17 #Active-CSE: 7 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00004<perm_ExplicitBounded_Values_00005)
+BOOL aux18 #Active-CSE: 7 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00005<=perm_ExplicitBounded_Values_00002)
+BOOL aux19 #Active-CSE: 4 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00001<=perm_ExplicitBounded_Values_00005)
+BOOL aux20 #Active-CSE: 3 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00005<=perm_ExplicitBounded_Values_00001)
+BOOL aux21 #Active-CSE: 3 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00004<=perm_ExplicitBounded_Values_00001)
+BOOL aux22 #Active-CSE: 2 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00001<=perm_ExplicitBounded_Values_00003)
+BOOL aux23 #Active-CSE: 2 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00001<=perm_ExplicitBounded_Values_00002)
+BOOL aux24 #Active-CSE: 5 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00002<=perm_ExplicitBounded_Values_00001)
+BOOL aux25 #Active-CSE: 5 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00002<=perm_ExplicitBounded_Values_00005)
+BOOL aux26 #Active-CSE: 7 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00003<perm_ExplicitBounded_Values_00005)
+BOOL aux27 #Active-CSE: 5 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00002<=perm_ExplicitBounded_Values_00003)
+BOOL aux28 #Active-CSE: 5 occurrences of this expression or equivalent: (perm_ExplicitBounded_Values_00002<=perm_ExplicitBounded_Values_00004)
+**VARIABLES**
+ALIAS mixed_avoidance_ExplicitR16R18R5_2_RelationAsSet_ExplicitVarSizeWithMarker_Marker[1]=[1]
+**VARIABLES**
+ALIAS aux0[3]=[0, 0, 0]
+**TUPLELIST**
+mixed_avoidance_ExplicitR16R18R5_2_RelationAsSet_ExplicitVarSizeWithMarker_Values_2 1 1
+1 
+**VARIABLES**
+ALIAS mixed_avoidance_ExplicitR16R18R5_2_RelationAsSet_ExplicitVarSizeWithMarker_Values_2[1,1]=[[1]]
+**TUPLELIST**
+mixed_avoidance_ExplicitR16R18R5_2_RelationAsSet_ExplicitVarSizeWithMarker_Values_1 1 1
+0 
+**VARIABLES**
+ALIAS mixed_avoidance_ExplicitR16R18R5_2_RelationAsSet_ExplicitVarSizeWithMarker_Values_1[1,1]=[[0]]
+**VARIABLES**
+ALIAS mixed_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length[1]=[3]
+**TUPLELIST**
+mixed_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Values 1 3
+1 3 2 
+**VARIABLES**
+ALIAS mixed_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Values[1,3]=[[1, 3, 2]]
+**SEARCH**
+PRINT[[perm_ExplicitBounded_Values_00001],[perm_ExplicitBounded_Values_00002],[perm_ExplicitBounded_Values_00003],[perm_ExplicitBounded_Values_00004],[perm_ExplicitBounded_Values_00005]]
+**CONSTRAINTS**
+reify(watched-and({w-literal(aux10,1),w-literal(aux26,0)}), aux1)
+reify(watched-and({w-literal(aux15,1),w-literal(aux26,0)}), aux2)
+reify(watched-and({w-literal(aux12,1),w-literal(aux17,0)}), aux3)
+reify(watched-and({w-literal(aux19,1),w-literal(aux17,0)}), aux4)
+reify(watched-and({w-literal(aux14,1),w-literal(aux15,1)}), aux5)
+reify(watched-and({w-literal(aux19,1),w-literal(aux24,1)}), aux6)
+reify(watched-and({w-literal(aux22,1),w-literal(aux9,1)}), aux7)
+reify(watched-and({w-literal(aux23,1),w-literal(aux25,1)}), aux8)
+reify(ineq(perm_ExplicitBounded_Values_00003, perm_ExplicitBounded_Values_00005, 0), aux9)
+reify(ineq(perm_ExplicitBounded_Values_00003, perm_ExplicitBounded_Values_00004, 0), aux10)
+reify(ineq(perm_ExplicitBounded_Values_00004, perm_ExplicitBounded_Values_00002, 0), aux11)
+reify(ineq(perm_ExplicitBounded_Values_00004, perm_ExplicitBounded_Values_00003, 0), aux12)
+reify(ineq(perm_ExplicitBounded_Values_00003, perm_ExplicitBounded_Values_00001, 0), aux13)
+reify(ineq(perm_ExplicitBounded_Values_00001, perm_ExplicitBounded_Values_00004, 0), aux14)
+reify(ineq(perm_ExplicitBounded_Values_00004, perm_ExplicitBounded_Values_00005, 0), aux15)
+reify(ineq(perm_ExplicitBounded_Values_00003, perm_ExplicitBounded_Values_00002, 0), aux16)
+reify(ineq(perm_ExplicitBounded_Values_00004, perm_ExplicitBounded_Values_00005, -1), aux17)
+reify(ineq(perm_ExplicitBounded_Values_00005, perm_ExplicitBounded_Values_00002, 0), aux18)
+reify(ineq(perm_ExplicitBounded_Values_00001, perm_ExplicitBounded_Values_00005, 0), aux19)
+reify(ineq(perm_ExplicitBounded_Values_00005, perm_ExplicitBounded_Values_00001, 0), aux20)
+reify(ineq(perm_ExplicitBounded_Values_00004, perm_ExplicitBounded_Values_00001, 0), aux21)
+reify(ineq(perm_ExplicitBounded_Values_00001, perm_ExplicitBounded_Values_00003, 0), aux22)
+reify(ineq(perm_ExplicitBounded_Values_00001, perm_ExplicitBounded_Values_00002, 0), aux23)
+reify(ineq(perm_ExplicitBounded_Values_00002, perm_ExplicitBounded_Values_00001, 0), aux24)
+reify(ineq(perm_ExplicitBounded_Values_00002, perm_ExplicitBounded_Values_00005, 0), aux25)
+reify(ineq(perm_ExplicitBounded_Values_00003, perm_ExplicitBounded_Values_00005, -1), aux26)
+reify(ineq(perm_ExplicitBounded_Values_00002, perm_ExplicitBounded_Values_00003, 0), aux27)
+reify(ineq(perm_ExplicitBounded_Values_00002, perm_ExplicitBounded_Values_00004, 0), aux28)
+gacalldiff([perm_ExplicitBounded_Values_00001, perm_ExplicitBounded_Values_00002, perm_ExplicitBounded_Values_00003, perm_ExplicitBounded_Values_00004, perm_ExplicitBounded_Values_00005])
+watched-or({w-literal(aux24,1),w-literal(aux28,1),w-literal(aux25,1),w-literal(aux13,1),watched-and({w-literal(aux14,1),w-literal(aux12,1)}),watched-and({w-literal(aux19,1),w-literal(aux26,0)}),watched-and({w-literal(aux10,1),w-literal(aux11,1)}),watched-and({w-literal(aux9,1),w-literal(aux18,1)}),w-literal(aux16,0)})
+watched-or({w-literal(aux24,1),w-literal(aux27,1),w-literal(aux25,1),w-literal(aux21,1),watched-and({w-literal(aux22,1),w-literal(aux10,1)}),w-literal(aux4,1),watched-and({w-literal(aux16,1),w-literal(aux12,1)}),watched-and({w-literal(aux15,1),w-literal(aux18,1)}),w-literal(aux11,0)})
+watched-or({w-literal(aux24,1),w-literal(aux27,1),w-literal(aux28,1),w-literal(aux20,1),w-literal(aux7,1),w-literal(aux5,1),watched-and({w-literal(aux16,1),w-literal(aux26,0)}),watched-and({w-literal(aux11,1),w-literal(aux17,0)}),w-literal(aux18,0)})
+watched-or({w-literal(aux13,1),w-literal(aux16,1),w-literal(aux9,1),w-literal(aux21,1),watched-and({w-literal(aux23,1),w-literal(aux28,1)}),w-literal(aux4,1),watched-and({w-literal(aux27,1),w-literal(aux11,1)}),w-literal(aux2,1),w-literal(aux12,0)})
+watched-or({w-literal(aux13,1),w-literal(aux16,1),w-literal(aux10,1),w-literal(aux20,1),w-literal(aux8,1),w-literal(aux5,1),watched-and({w-literal(aux27,1),w-literal(aux18,1)}),w-literal(aux3,1),w-literal(aux26,1)})
+watched-or({w-literal(aux21,1),w-literal(aux11,1),w-literal(aux12,1),w-literal(aux20,1),w-literal(aux8,1),w-literal(aux7,1),watched-and({w-literal(aux28,1),w-literal(aux18,1)}),w-literal(aux1,1),w-literal(aux17,1)})
+watched-or({w-literal(aux16,1),w-literal(aux9,1),w-literal(aux11,1),watched-and({w-literal(aux14,1),w-literal(aux24,1)}),watched-and({w-literal(aux25,1),w-literal(aux17,0)}),w-literal(aux2,1),w-literal(aux12,0)})
+watched-or({w-literal(aux16,1),w-literal(aux10,1),w-literal(aux18,1),w-literal(aux6,1),watched-and({w-literal(aux28,1),w-literal(aux15,1)}),w-literal(aux3,1),w-literal(aux26,1)})
+watched-or({w-literal(aux11,1),w-literal(aux12,1),w-literal(aux18,1),w-literal(aux6,1),watched-and({w-literal(aux27,1),w-literal(aux9,1)}),w-literal(aux1,1),w-literal(aux17,1)})
+watched-or({w-literal(aux12,1),w-literal(aux26,0),watched-and({w-literal(aux19,1),w-literal(aux13,1)}),watched-and({w-literal(aux25,1),w-literal(aux16,1)}),w-literal(aux17,1)})
+**EOF**

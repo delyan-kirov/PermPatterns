@@ -1,4 +1,0 @@
-language Essence 1.3
-
-letting perm be sequence(1, 4, 5, 3, 7, 6, 2)
-letting permPadded be [0, 1, 4, 5, 3, 7, 6, 2, 8; int(0..8)]
