@@ -27,7 +27,7 @@ find ../params/mixed/avoidance/boxed -type f -print | while read -r file; do
     cd ../
 done
 
-echo breaking
+echo  
 
 find ../params/mesh/avoidance/boxed -type f -print | while read -r file; do
     echo "$file"
@@ -50,3 +50,9 @@ find ../params/mesh/avoidance/boxed -type f -print | while read -r file; do
     done
     cd ../
 done
+
+# Directory for param and model files
+#../params/mixed/avoidance/boxed
+#../models/mixed/avoidance/boxed.essence
+#../params/mesh/avoidance/boxed 
+#../models/classic/avoidance/mesh.essence 
