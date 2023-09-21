@@ -1,6 +1,6 @@
 $ This of mixed patterns to avoid
-$ mesh_avoidance = permutation + mesh pieces + vincular/bivincular indices
-given mixed_avoidance : set of (sequence(injective) of int, relation of (int * int), set of int)
+$ mixed_avoidance = permutation + mesh pieces + vincular/bivincular indices
+given mixed_avoidance : set of (sequence(injective) of int, relation of (int * int), set of int, set of int)
 
 $ The permutation we are searching for (1..length is the permutation)
 given length : int
@@ -15,7 +15,7 @@ such that forAll i : int(1..length) . perm(i) = permPadded[i]
 
 such that
     $ pattern is the pattern, mesh is the mesh as a relation
-    forAll (pattern, mesh, bars) in mixed_avoidance .
+    forAll (pattern, mesh, ind_bars, val_bars) in mixed_avoidance .
     $ Build the inverse of 'pattern'. This is completely evaluated before solving.
     exists patterninv: matrix indexed by [int(0..|pattern|+1)] of int(0..|pattern|+1),
                 patterninv[0] = 0 /\ patterninv[|pattern|+1] = |pattern|+1 /\
@@ -35,4 +35,7 @@ such that
                     exists z: int(ix[i]+1..ix[i+1]-1). (permPadded[ix[patterninv[j]]] <= permPadded[z] /\ permPadded[z] <= permPadded[ix[patterninv[j+1]]])
             ) \/
             $ Bivincular pieces
-            !(forAll bar in bars . ix[bar] + 1 = ix[bar+1])
+             !(  (forAll bar in ind_bars . ix[bar] + 1 = ix[bar+1])
+             /\
+             (forAll bar in val_bars . permPadded[ix[patterninv[bar]]]+1 = permPadded[ix[patterninv[bar+1]]])
+            )

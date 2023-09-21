@@ -1,0 +1,5 @@
+language ESSENCE' 1.0
+
+letting permPadded be [0, 1, 2, 4, 5, 3, 6; int(0..6)]
+letting perm_ExplicitBounded_Length be 5
+letting perm_ExplicitBounded_Values be [1, 2, 4, 5, 3; int(1..5)]
