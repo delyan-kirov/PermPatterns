@@ -1,0 +1,142 @@
+bash execVinc.sh 
+Enter a folder name for the 'temp' directory:
+TestVincBivincLen16
+../params/mixed/avoidance/vincular/mixed_bivinc_1.param
+Generating models for vincular.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: model000001.eprime mixed_bivinc_1.param
+Error:
+    Savile Row stdout: 
+    Savile Row stderr: Exception in thread "Thread-0" java.lang.OutOfMemoryError: Java heap space
+	at savilerow.SafeMatrixDeref.copy(SafeMatrixDeref.java:42)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:74)
+	at savilerow.BinOp.<init>(BinOp.java:37)
+	at savilerow.LessEqual.<init>(LessEqual.java:33)
+	at savilerow.LessEqual.copy(LessEqual.java:38)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:124)
+	at savilerow.And.<init>(And.java:37)
+	at savilerow.And.copy(And.java:46)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:110)
+	at savilerow.ComprehensionMatrix.<init>(ComprehensionMatrix.java:36)
+	at savilerow.ComprehensionMatrix.copy(ComprehensionMatrix.java:41)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:52)
+	at savilerow.OrVector.<init>(OrVector.java:35)
+	at savilerow.OrVector.copy(OrVector.java:40)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:110)
+	at savilerow.ComprehensionMatrix.<init>(ComprehensionMatrix.java:36)
+	at savilerow.ComprehensionMatrix.copy(ComprehensionMatrix.java:41)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:52)
+	at savilerow.OrVector.<init>(OrVector.java:35)
+	at savilerow.OrVector.copy(OrVector.java:40)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:124)
+	at savilerow.Or.<init>(Or.java:40)
+	at savilerow.Or.copy(Or.java:54)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:312)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:330)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:330)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:330)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:284)
+	at savilerow.TransformQuantifiedExpression.allUnrollComprehension(TransformQuantifiedExpression.java:169)
+	at savilerow.TransformQuantifiedExpression.processNode(TransformQuantifiedExpression.java:158)
+	at savilerow.TreeTransformerTopdown.transform_children(TreeTransformerTopdown.java:74)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:65)
+
+    Savile Row exit-code: 0
+removed './vincular.essence'
+removed './mixed_bivinc_1.param'
+
+../params/mesh/avoidance/bivincular/132_1_02_23.param
+New file name is 132_1_02_23.param
+Generating models for mesh.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: model000001.eprime 132_1_02_23.param
+Error:
+    Savile Row stdout: 
+    Savile Row stderr: Exception in thread "Thread-0" java.lang.OutOfMemoryError: Java heap space
+	at savilerow.NumberConstantByte.copy(NumberConstantByte.java:37)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:66)
+	at savilerow.Range.<init>(Range.java:36)
+	at savilerow.Range.copy(Range.java:41)
+	at savilerow.ASTNodeC.setChildren(ASTNodeC.java:209)
+	at savilerow.ASTNodeC.setChildren(ASTNodeC.java:219)
+	at savilerow.IntegerDomain.<init>(IntegerDomain.java:37)
+	at savilerow.IntegerDomain.copy(IntegerDomain.java:53)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:74)
+	at savilerow.ComprehensionForall.<init>(ComprehensionForall.java:32)
+	at savilerow.ComprehensionForall.copy(ComprehensionForall.java:38)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:161)
+	at savilerow.Container.<init>(Container.java:35)
+	at savilerow.ComprehensionMatrix.<init>(ComprehensionMatrix.java:36)
+	at savilerow.ComprehensionMatrix.copy(ComprehensionMatrix.java:41)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:52)
+	at savilerow.AndVector.<init>(AndVector.java:34)
+	at savilerow.AndVector.copy(AndVector.java:39)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:52)
+	at savilerow.Unary.<init>(Unary.java:35)
+	at savilerow.Negate.<init>(Negate.java:36)
+	at savilerow.Negate.copy(Negate.java:41)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:124)
+	at savilerow.Or.<init>(Or.java:40)
+	at savilerow.Or.copy(Or.java:54)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:312)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:330)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:330)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:330)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:330)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:284)
+	at savilerow.TransformQuantifiedExpression.allUnrollComprehension(TransformQuantifiedExpression.java:169)
+
+    Savile Row exit-code: 0
+132_1_02_23_mesh
+removed './mesh.essence'
+removed './132_1_02_23.param'
+
+../params/mixed/avoidance/bivincular/mixed_vinc_1.param
+Generating models for bivincular.essence
+Generated models: model000001.eprime
+Saved under: conjure-output
+Savile Row: model000001.eprime mixed_vinc_1.param
+Error:
+    Savile Row stdout: 
+    Savile Row stderr: WARNING: interval 1..0 is out of order. Rewriting to empty interval.
+WARNING: interval 1..0 is out of order. Rewriting to empty interval.
+Exception in thread "Thread-0" java.lang.OutOfMemoryError: Java heap space
+	at savilerow.SafeMatrixDeref.copy(SafeMatrixDeref.java:42)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:124)
+	at savilerow.WeightedSum.<init>(WeightedSum.java:63)
+	at savilerow.WeightedSum.copy(WeightedSum.java:107)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:144)
+	at savilerow.IsMatrixSliceDefined.<init>(IsMatrixSliceDefined.java:42)
+	at savilerow.IsMatrixSliceDefined.copy(IsMatrixSliceDefined.java:58)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:124)
+	at savilerow.And.<init>(And.java:37)
+	at savilerow.And.copy(And.java:46)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:110)
+	at savilerow.ComprehensionMatrix.<init>(ComprehensionMatrix.java:36)
+	at savilerow.ComprehensionMatrix.copy(ComprehensionMatrix.java:41)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:52)
+	at savilerow.OrVector.<init>(OrVector.java:35)
+	at savilerow.OrVector.copy(OrVector.java:40)
+	at savilerow.ASTNodeC.<init>(ASTNodeC.java:124)
+	at savilerow.Or.<init>(Or.java:40)
+	at savilerow.Or.copy(Or.java:54)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:312)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:330)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:330)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:330)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:330)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:284)
+	at savilerow.TransformQuantifiedExpression.allUnrollComprehension(TransformQuantifiedExpression.java:169)
+	at savilerow.TransformQuantifiedExpression.processNode(TransformQuantifiedExpression.java:158)
+	at savilerow.TreeTransformerTopdown.transform_children(TreeTransformerTopdown.java:74)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:65)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+
+    Savile Row exit-code: 0
+removed './bivincular.essence'
+removed './mixed_vinc_1.param'
+
