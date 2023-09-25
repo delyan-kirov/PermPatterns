@@ -1,0 +1,399 @@
+language ESSENCE' 1.0
+
+given fin1: int
+given fin2: int
+given fin3: int
+given fin4: int
+given fin5: int
+given fin6: int
+given fin7: int
+given fin8: int
+given fin9: int
+given mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length: matrix indexed by [int(1..fin1)] of int(0..fin2)
+given mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Values:
+        matrix indexed by [int(1..fin1), int(1..fin2)] of int(fin3..fin4)
+given mesh_avoidance_ExplicitR16R18R5_2_RelationAsSet_ExplicitVarSizeWithMarker_Marker:
+        matrix indexed by [int(1..fin1)] of int(0..fin5)
+given mesh_avoidance_ExplicitR16R18R5_2_RelationAsSet_ExplicitVarSizeWithMarker_Values_1:
+        matrix indexed by [int(1..fin1), int(1..fin5)] of int(fin6..fin7)
+given mesh_avoidance_ExplicitR16R18R5_2_RelationAsSet_ExplicitVarSizeWithMarker_Values_2:
+        matrix indexed by [int(1..fin1), int(1..fin5)] of int(fin8..fin9)
+given length: int
+find perm_ExplicitBounded_Length: int(length)
+find perm_ExplicitBounded_Values: matrix indexed by [int(1..length)] of int(1..length)
+letting let1 be length + 1
+letting let2 be length + 1
+find permPadded: matrix indexed by [int(0..let1)] of int(0..let2)
+branching on [perm_ExplicitBounded_Length, perm_ExplicitBounded_Values, permPadded]
+such that
+    permPadded[0] = 0,
+    permPadded[length + 1] = length + 1,
+    and([perm_ExplicitBounded_Values[i] = permPadded[i] /\ i <= length | i : int(1..length)]),
+    and([or([and([and([ix[0] = 0, ix[mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length[q13] + 1] = length + 1,
+                       and([ix[i] < ix[i + 1]
+                                | i : int(0..mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length[q13])]),
+                       and([sum([mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Values[q13, q14]
+                                     | q14 : int(1..fin2),
+                                       q14 <= mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length[q13], q14 = n1])
+                            <
+                            sum([mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Values[q13, q15]
+                                     | q15 : int(1..fin2),
+                                       q15 <= mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length[q13], q15 = n2])
+                            /\
+                            or([q16 = n2
+                                    | q16 : int(1..fin2),
+                                      q16 <= mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length[q13]])
+                            /\
+                            or([q17 = n1
+                                    | q17 : int(1..fin2),
+                                      q17 <= mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length[q13]])
+                            <-> permPadded[ix[n1]] < permPadded[ix[n2]]
+                                | n1 : int(1..mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length[q13]),
+                                  n2 : int(1..mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length[q13]), n1 < n2]);
+                           int(1..4)])
+                  ->
+                  or([or([permPadded
+                              [ix  [patterninv
+                                        [mesh_avoidance_ExplicitR16R18R5_2_RelationAsSet_ExplicitVarSizeWithMarker_Values_2
+                                             [q13, q18]]]]
+                          <= permPadded[z]
+                          /\
+                          permPadded[z] <=
+                          permPadded
+                              [ix  [patterninv
+                                        [mesh_avoidance_ExplicitR16R18R5_2_RelationAsSet_ExplicitVarSizeWithMarker_Values_2
+                                             [q13, q18]
+                                         + 1]]]
+                              | z : int(ix  [mesh_avoidance_ExplicitR16R18R5_2_RelationAsSet_ExplicitVarSizeWithMarker_Values_1
+                                                 [q13, q18]]
+                                        +
+                                        1..ix  [mesh_avoidance_ExplicitR16R18R5_2_RelationAsSet_ExplicitVarSizeWithMarker_Values_1
+                                                    [q13, q18]
+                                                + 1]
+                                           - 1)])
+                          | q18 : int(1..fin5),
+                            q18 <=
+                            mesh_avoidance_ExplicitR16R18R5_2_RelationAsSet_ExplicitVarSizeWithMarker_Marker[q13]])
+                      | ix : matrix indexed by [int(0..mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length[q13] +
+                                                       1)] of
+                                 int(0..length + 1)])
+                 | patterninv : matrix indexed by [int(0..mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length[q13]
+                                                          + 1)] of
+                                    int(0..mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length[q13] + 1),
+                   patterninv[0] = 0 /\
+                   patterninv[mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length[q13] + 1] =
+                   mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length[q13] + 1
+                   /\
+                   and([patterninv
+                            [sum([mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Values[q13, q19]
+                                      | q19 : int(1..fin2),
+                                        q19 <= mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length[q13], q19 = i])]
+                        = i
+                        /\
+                        or([q20 = i
+                                | q20 : int(1..fin2),
+                                  q20 <= mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length[q13]])
+                            | i : int(1..mesh_avoidance_ExplicitR16R18R5_1_ExplicitBounded_Length[q13])])])
+             | q13 : int(1..fin1)]),
+    allDiff(perm_ExplicitBounded_Values)
+
+$ Conjure's
+$ {"finds": [{"Name": "perm"}, {"Name": "permPadded"}], "givens": [{"Name": "mesh_avoidance"}, {"Name": "length"}],
+$  "enumGivens": [], "enumLettings": [],
+$  "lettings":
+$      [[{"MachineName": ["let", 1, []]},
+$        {"Op":
+$             {"MkOpSum":
+$                  {"AbstractLiteral":
+$                       {"AbsLitMatrix":
+$                            [{"DomainInt":
+$                                  [{"TagInt": []},
+$                                   [{"RangeBounded":
+$                                         [{"Constant": {"ConstantInt": [{"TagInt": []}, 1]}},
+$                                          {"Constant": {"ConstantInt": [{"TagInt": []}, 2]}}]}]]},
+$                             [{"Reference":
+$                                   [{"Name": "length"},
+$                                    {"DeclNoRepr":
+$                                         ["Given", {"Name": "length"}, {"DomainInt": [{"TagInt": []}, []]},
+$                                          {"NoRegion": []}]}]},
+$                              {"Constant": {"ConstantInt": [{"TagInt": []}, 1]}}]]}}}}],
+$       [{"MachineName": ["let", 2, []]},
+$        {"Op":
+$             {"MkOpSum":
+$                  {"AbstractLiteral":
+$                       {"AbsLitMatrix":
+$                            [{"DomainInt":
+$                                  [{"TagInt": []},
+$                                   [{"RangeBounded":
+$                                         [{"Constant": {"ConstantInt": [{"TagInt": []}, 1]}},
+$                                          {"Constant": {"ConstantInt": [{"TagInt": []}, 2]}}]}]]},
+$                             [{"Reference":
+$                                   [{"Name": "length"},
+$                                    {"DeclNoRepr":
+$                                         ["Given", {"Name": "length"}, {"DomainInt": [{"TagInt": []}, []]},
+$                                          {"NoRegion": []}]}]},
+$                              {"Constant": {"ConstantInt": [{"TagInt": []}, 1]}}]]}}}}]],
+$  "unnameds": [], "strategyQ": {"PickFirst": []}, "strategyA": {"Compact": []},
+$  "trailCompact":
+$      [[1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1],
+$       [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1],
+$       [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1],
+$       [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1],
+$       [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1],
+$       [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1],
+$       [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1],
+$       [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1],
+$       [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1],
+$       [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1]],
+$  "nameGenState": [["fin", 10], ["let", 3], ["q", 21]], "nbExtraGivens": 9,
+$  "representations":
+$      [[{"MachineName": ["fin", 1, []]}, {"DomainInt": [{"TagInt": []}, []]}],
+$       [{"MachineName": ["fin", 2, []]}, {"DomainInt": [{"TagInt": []}, []]}],
+$       [{"MachineName": ["fin", 3, []]}, {"DomainInt": [{"TagInt": []}, []]}],
+$       [{"MachineName": ["fin", 4, []]}, {"DomainInt": [{"TagInt": []}, []]}],
+$       [{"MachineName": ["fin", 5, []]}, {"DomainInt": [{"TagInt": []}, []]}],
+$       [{"MachineName": ["fin", 6, []]}, {"DomainInt": [{"TagInt": []}, []]}],
+$       [{"MachineName": ["fin", 7, []]}, {"DomainInt": [{"TagInt": []}, []]}],
+$       [{"MachineName": ["fin", 8, []]}, {"DomainInt": [{"TagInt": []}, []]}],
+$       [{"MachineName": ["fin", 9, []]}, {"DomainInt": [{"TagInt": []}, []]}],
+$       [{"Name": "length"}, {"DomainInt": [{"TagInt": []}, []]}],
+$       [{"Name": "permPadded"},
+$        {"DomainMatrix":
+$             [{"DomainInt":
+$                   [{"TagInt": []},
+$                    [{"RangeBounded":
+$                          [{"Constant": {"ConstantInt": [{"TagInt": []}, 0]}},
+$                           {"Reference":
+$                                [{"MachineName": ["let", 1, []]},
+$                                 {"Alias":
+$                                      {"Op":
+$                                           {"MkOpSum":
+$                                                {"AbstractLiteral":
+$                                                     {"AbsLitMatrix":
+$                                                          [{"DomainInt":
+$                                                                [{"TagInt": []},
+$                                                                 [{"RangeBounded":
+$                                                                       [{"Constant":
+$                                                                             {"ConstantInt": [{"TagInt": []}, 1]}},
+$                                                                        {"Constant":
+$                                                                             {"ConstantInt": [{"TagInt": []}, 2]}}]}]]},
+$                                                           [{"Reference":
+$                                                                 [{"Name": "length"},
+$                                                                  {"DeclHasRepr":
+$                                                                       ["Given", {"Name": "length"},
+$                                                                        {"DomainInt": [{"TagInt": []}, []]}]}]},
+$                                                            {"Constant":
+$                                                                 {"ConstantInt": [{"TagInt": []}, 1]}}]]}}}}}]}]}]]},
+$              {"DomainInt":
+$                   [{"TagInt": []},
+$                    [{"RangeBounded":
+$                          [{"Constant": {"ConstantInt": [{"TagInt": []}, 0]}},
+$                           {"Reference":
+$                                [{"MachineName": ["let", 2, []]},
+$                                 {"Alias":
+$                                      {"Op":
+$                                           {"MkOpSum":
+$                                                {"AbstractLiteral":
+$                                                     {"AbsLitMatrix":
+$                                                          [{"DomainInt":
+$                                                                [{"TagInt": []},
+$                                                                 [{"RangeBounded":
+$                                                                       [{"Constant":
+$                                                                             {"ConstantInt": [{"TagInt": []}, 1]}},
+$                                                                        {"Constant":
+$                                                                             {"ConstantInt": [{"TagInt": []}, 2]}}]}]]},
+$                                                           [{"Reference":
+$                                                                 [{"Name": "length"},
+$                                                                  {"DeclHasRepr":
+$                                                                       ["Given", {"Name": "length"},
+$                                                                        {"DomainInt": [{"TagInt": []}, []]}]}]},
+$                                                            {"Constant":
+$                                                                 {"ConstantInt": [{"TagInt": []}, 1]}}]]}}}}}]}]}]]}]}],
+$       [{"Name": "perm"},
+$        {"DomainSequence":
+$             [{"Sequence_ExplicitBounded": []},
+$              [{"SizeAttr_Size":
+$                    {"Reference":
+$                         [{"Name": "length"},
+$                          {"DeclHasRepr": ["Given", {"Name": "length"}, {"DomainInt": [{"TagInt": []}, []]}]}]}},
+$               "JectivityAttr_Injective"],
+$              {"DomainInt":
+$                   [{"TagInt": []},
+$                    [{"RangeBounded":
+$                          [{"Constant": {"ConstantInt": [{"TagInt": []}, 1]}},
+$                           {"Reference":
+$                                [{"Name": "length"},
+$                                 {"DeclHasRepr":
+$                                      ["Given", {"Name": "length"}, {"DomainInt": [{"TagInt": []}, []]}]}]}]}]]}]}],
+$       [{"Name": "mesh_avoidance"},
+$        {"DomainSet":
+$             [{"Set_Explicit": []},
+$              {"SizeAttr_Size":
+$                   {"Reference":
+$                        [{"MachineName": ["fin", 1, []]},
+$                         {"DeclHasRepr":
+$                              ["Given", {"MachineName": ["fin", 1, []]}, {"DomainInt": [{"TagInt": []}, []]}]}]}},
+$              {"DomainTuple":
+$                   [{"DomainSequence":
+$                         [{"Sequence_ExplicitBounded": []},
+$                          [{"SizeAttr_MaxSize":
+$                                {"Reference":
+$                                     [{"MachineName": ["fin", 2, []]},
+$                                      {"DeclHasRepr":
+$                                           ["Given", {"MachineName": ["fin", 2, []]},
+$                                            {"DomainInt": [{"TagInt": []}, []]}]}]}},
+$                           "JectivityAttr_Injective"],
+$                          {"DomainInt":
+$                               [{"TagInt": []},
+$                                [{"RangeBounded":
+$                                      [{"Reference":
+$                                            [{"MachineName": ["fin", 3, []]},
+$                                             {"DeclHasRepr":
+$                                                  ["Given", {"MachineName": ["fin", 3, []]},
+$                                                   {"DomainInt": [{"TagInt": []}, []]}]}]},
+$                                       {"Reference":
+$                                            [{"MachineName": ["fin", 4, []]},
+$                                             {"DeclHasRepr":
+$                                                  ["Given", {"MachineName": ["fin", 4, []]},
+$                                                   {"DomainInt": [{"TagInt": []}, []]}]}]}]}]]}]},
+$                    {"DomainRelation":
+$                         [{"Relation_AsSet": {"Set_ExplicitVarSizeWithMarker": []}},
+$                          [{"SizeAttr_MaxSize":
+$                                {"Reference":
+$                                     [{"MachineName": ["fin", 5, []]},
+$                                      {"DeclHasRepr":
+$                                           ["Given", {"MachineName": ["fin", 5, []]},
+$                                            {"DomainInt": [{"TagInt": []}, []]}]}]}},
+$                           []],
+$                          [{"DomainInt":
+$                                [{"TagInt": []},
+$                                 [{"RangeBounded":
+$                                       [{"Reference":
+$                                             [{"MachineName": ["fin", 6, []]},
+$                                              {"DeclHasRepr":
+$                                                   ["Given", {"MachineName": ["fin", 6, []]},
+$                                                    {"DomainInt": [{"TagInt": []}, []]}]}]},
+$                                        {"Reference":
+$                                             [{"MachineName": ["fin", 7, []]},
+$                                              {"DeclHasRepr":
+$                                                   ["Given", {"MachineName": ["fin", 7, []]},
+$                                                    {"DomainInt": [{"TagInt": []}, []]}]}]}]}]]},
+$                           {"DomainInt":
+$                                [{"TagInt": []},
+$                                 [{"RangeBounded":
+$                                       [{"Reference":
+$                                             [{"MachineName": ["fin", 8, []]},
+$                                              {"DeclHasRepr":
+$                                                   ["Given", {"MachineName": ["fin", 8, []]},
+$                                                    {"DomainInt": [{"TagInt": []}, []]}]}]},
+$                                        {"Reference":
+$                                             [{"MachineName": ["fin", 9, []]},
+$                                              {"DeclHasRepr":
+$                                                   ["Given", {"MachineName": ["fin", 9, []]},
+$                                                    {"DomainInt": [{"TagInt": []}, []]}]}]}]}]]}]]}]}]}]],
+$  "representationsTree":
+$      [[{"MachineName": ["fin", 1, []]}, [{"rootLabel": null, "subForest": []}]],
+$       [{"MachineName": ["fin", 2, []]}, [{"rootLabel": null, "subForest": []}]],
+$       [{"MachineName": ["fin", 3, []]}, [{"rootLabel": null, "subForest": []}]],
+$       [{"MachineName": ["fin", 4, []]}, [{"rootLabel": null, "subForest": []}]],
+$       [{"MachineName": ["fin", 5, []]}, [{"rootLabel": null, "subForest": []}]],
+$       [{"MachineName": ["fin", 6, []]}, [{"rootLabel": null, "subForest": []}]],
+$       [{"MachineName": ["fin", 7, []]}, [{"rootLabel": null, "subForest": []}]],
+$       [{"MachineName": ["fin", 8, []]}, [{"rootLabel": null, "subForest": []}]],
+$       [{"MachineName": ["fin", 9, []]}, [{"rootLabel": null, "subForest": []}]],
+$       [{"Name": "length"}, [{"rootLabel": null, "subForest": []}]],
+$       [{"Name": "mesh_avoidance"},
+$        [{"rootLabel": {"Set_Explicit": []},
+$          "subForest":
+$              [{"rootLabel": null,
+$                "subForest":
+$                    [{"rootLabel": {"Sequence_ExplicitBounded": []},
+$                      "subForest": [{"rootLabel": null, "subForest": []}]},
+$                     {"rootLabel": {"Relation_AsSet": {"Set_ExplicitVarSizeWithMarker": []}},
+$                      "subForest": [{"rootLabel": null, "subForest": []}, {"rootLabel": null, "subForest": []}]}]}]}]],
+$       [{"Name": "perm"},
+$        [{"rootLabel": {"Sequence_ExplicitBounded": []}, "subForest": [{"rootLabel": null, "subForest": []}]}]],
+$       [{"Name": "permPadded"}, [{"rootLabel": null, "subForest": [{"rootLabel": null, "subForest": []}]}]]],
+$  "originalDomains":
+$      [[{"Name": "mesh_avoidance"},
+$        {"DomainSet":
+$             [[], {"SizeAttr_None": []},
+$              {"DomainTuple":
+$                   [{"DomainSequence":
+$                         [[], [{"SizeAttr_None": []}, "JectivityAttr_Injective"], {"DomainInt": [{"TagInt": []}, []]}]},
+$                    {"DomainRelation":
+$                         [[], [{"SizeAttr_None": []}, []],
+$                          [{"DomainInt": [{"TagInt": []}, []]}, {"DomainInt": [{"TagInt": []}, []]}]]}]}]}],
+$       [{"Name": "length"}, {"DomainInt": [{"TagInt": []}, []]}],
+$       [{"Name": "perm"},
+$        {"DomainSequence":
+$             [[], [{"SizeAttr_Size": {"Reference": [{"Name": "length"}, null]}}, "JectivityAttr_Injective"],
+$              {"DomainInt":
+$                   [{"TagInt": []},
+$                    [{"RangeBounded":
+$                          [{"Constant": {"ConstantInt": [{"TagInt": []}, 1]}},
+$                           {"Reference": [{"Name": "length"}, null]}]}]]}]}],
+$       [{"Name": "permPadded"},
+$        {"DomainMatrix":
+$             [{"DomainInt":
+$                   [{"TagInt": []},
+$                    [{"RangeBounded":
+$                          [{"Constant": {"ConstantInt": [{"TagInt": []}, 0]}},
+$                           {"Reference": [{"MachineName": ["let", 1, []]}, null]}]}]]},
+$              {"DomainInt":
+$                   [{"TagInt": []},
+$                    [{"RangeBounded":
+$                          [{"Constant": {"ConstantInt": [{"TagInt": []}, 0]}},
+$                           {"Reference": [{"MachineName": ["let", 2, []]}, null]}]}]]}]}]],
+$  "trailGeneralised":
+$      [[-8504017426805250042, 5276521104756921608], [4616954334911236649, 5898280365065435201],
+$       [-6682060879364978981, 5276521104756921608], [-2518810273493404350, 8418936134237466765],
+$       [-7939446107756710964, 7468929541635292334], [8918654209177101052, 5898280365065435201],
+$       [6613658705799501194, 1303624024938874623], [4096168178244929703, 7657370169118901919],
+$       [-1750180595070793511, 1452842405885513016], [-2590725376248574321, -1788110028362243757],
+$       [-4380558688928596870, 5898280365065435201], [-7755138564705501733, 5276521104756921608],
+$       [-6053958076489420746, 5898280365065435201], [-6000777087576837638, 5276521104756921608],
+$       [8823096293959361101, 5898280365065435201], [3253778164638770021, 5276521104756921608],
+$       [6785188177767102054, 5898280365065435201], [-7951400878069651017, 5276521104756921608],
+$       [6062919611029153024, 5898280365065435201], [3463824017890331487, 5276521104756921608],
+$       [-2972787237612174068, 5898280365065435201], [-8425397173731169074, -6521143767227657527],
+$       [-6079397426814874637, -6521143767227657527], [-6825235117622316276, 6253570883237902054],
+$       [4852730780915618874, 6253570883237902054], [-3277261548937795726, 8716861081619657196],
+$       [6915827501660349023, 198139053021995847], [8394089274048658630, -1219994963961178864],
+$       [9109257404540870981, -8957873869727775128], [-5113957211386403638, 5276521104756921608],
+$       [3801368318640958439, 5898280365065435201], [-7473957267154507625, 5276521104756921608],
+$       [7300306142415068342, 5898280365065435201], [-3819761437811698692, 5276521104756921608],
+$       [-971386791529523049, 7136425363981238131], [-6858535052776096977, -4582726864322750903],
+$       [-170450538089843389, 5898280365065435201], [9006500369478682552, 5276521104756921608],
+$       [-7727982262208773869, -5191287657631926643], [-1026599982627029263, 3613538736722823921],
+$       [-4455987718374462063, 5898280365065435201], [882000329660325136, -8027548939343198953],
+$       [-2003758850380658189, -2582638415179443177], [-1587698735622696139, -5222509335309259580],
+$       [-8770640926074434272, -6964898030109764172], [-3979298197422281125, 5898280365065435201],
+$       [-7715609978638612119, 770316615745089133], [-6429679176313938412, 3499033101124879693],
+$       [943429728765055894, 818166137977490602], [3857357010550842703, 499802742451314580],
+$       [-5736771221105493060, 5898280365065435201], [5619902054320968202, 5276521104756921608],
+$       [2771428466115374655, 5898280365065435201], [3759212409699262781, 5276521104756921608],
+$       [-6682231002490428444, 5898280365065435201], [7163411532725926256, -1172693610092623772],
+$       [8091762878572019794, 170987105236467663], [7800911840690285558, -7816948145946779462],
+$       [-7183969911548905694, 1082234627327679251], [-4956813136394089928, -1078121273010751239],
+$       [3034857424857684366, 2706832372277832535], [4533243613502325430, 278922844458481961],
+$       [-2836527105586869296, 6195694059546257310], [-3611525662955678529, -8674094764667561068],
+$       [-5585458065577042840, 5332305288939200882], [-6928818026461772946, 5812685515901503077],
+$       [-7448307880673867224, -5869123358592049313], [-4464842842079424175, -4509749046162041987],
+$       [3606802836940499237, 8912395974082777213], [14281287822965941, 413011681705452681],
+$       [8251887041769128175, 211564280875206805], [-7227179969676297417, 3829811731846977678],
+$       [-6329795712307197413, -1913633069620152269], [6584296247342150020, 1850685523020183904],
+$       [7232475457981116964, -5816163349929689621], [-2014908264317782356, -1708973261754309095],
+$       [3122629064507966550, -3160440916513108092], [8789160900537300606, 3712424853627928665],
+$       [-7587229083665206482, 1911526410819323211], [-701488482429927154, 4560986284640578603],
+$       [-1543187594660977023, -8223892924879396848], [3169773078426443041, 1058568633106605056],
+$       [-5644265664360661655, -8718617493376765039], [980806515565347920, 2378447679169209063],
+$       [2315779475468924287, 54589174033711813], [-4555334170564945255, 2751140912580778143],
+$       [6230232153844971409, -4032328110022766720], [7530571338530454827, 7066554087330683305],
+$       [4670006046775054522, -2889129260799345229], [-7458181833370039177, -1924615996304942974],
+$       [6700256072462146274, 5812181453874269182], [-1540057894209536768, 9155905616984201828],
+$       [-1231221212233234753, 6974599349954485152], [-5615676392060802058, -8807052422931912332],
+$       [5337321014454198845, 5778719259770357248], [-4894401536737872996, 5668485079573765364],
+$       [-3254467883099200877, -5420071290108198448], [-8940990002979762542, 4110457826774952372],
+$       [-3722262881154758639, 6794018145404485952], [1391725996931715816, -2717752761680935708]],
+$  "trailVerbose": [], "trailRewrites": []}

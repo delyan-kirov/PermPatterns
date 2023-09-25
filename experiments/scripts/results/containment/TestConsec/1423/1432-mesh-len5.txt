@@ -1,0 +1,52 @@
+WARNING: interval 4..-1 is out of order. Rewriting to empty interval.
+WARNING: interval 7..4 is out of order. Rewriting to empty interval.
+WARNING: interval 6..1 is out of order. Rewriting to empty interval.
+WARNING: interval 6..1 is out of order. Rewriting to empty interval.
+WARNING: interval 6..1 is out of order. Rewriting to empty interval.
+WARNING: interval 6..1 is out of order. Rewriting to empty interval.
+WARNING: interval 3..2 is out of order. Rewriting to empty interval.
+WARNING: interval 3..2 is out of order. Rewriting to empty interval.
+WARNING: interval 3..2 is out of order. Rewriting to empty interval.
+WARNING: interval 3..2 is out of order. Rewriting to empty interval.
+WARNING: interval 4..-1 is out of order. Rewriting to empty interval.
+WARNING: interval 4..-1 is out of order. Rewriting to empty interval.
+WARNING: interval 4..-1 is out of order. Rewriting to empty interval.
+WARNING: interval 4..-1 is out of order. Rewriting to empty interval.
+Exception in thread "Thread-0" java.lang.OutOfMemoryError: Java heap space
+	at savilerow.ASTNode.getBounds(ASTNode.java:566)
+	at savilerow.LessEqual.simplify(LessEqual.java:49)
+	at savilerow.TransformSimplify.processNode(TransformSimplify.java:40)
+	at savilerow.TreeTransformerBottomUpNoWrapper.recursiveSearch(TreeTransformerBottomUpNoWrapper.java:101)
+	at savilerow.TreeTransformerBottomUpNoWrapper.transform(TreeTransformerBottomUpNoWrapper.java:63)
+	at savilerow.TransformQuantifiedExpression.unrollComprehension(TransformQuantifiedExpression.java:248)
+	at savilerow.TransformQuantifiedExpression.allUnrollComprehension(TransformQuantifiedExpression.java:169)
+	at savilerow.TransformQuantifiedExpression.processNode(TransformQuantifiedExpression.java:158)
+	at savilerow.TreeTransformerTopdown.transform_children(TreeTransformerTopdown.java:74)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:65)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+	at savilerow.TreeTransformerTopdown.transform_inner(TreeTransformerTopdown.java:67)
+	at savilerow.TreeTransformerTopdown.transform_root(TreeTransformerTopdown.java:60)
+	at savilerow.TreeTransformerTopdown.transform(TreeTransformerTopdown.java:47)
+	at savilerow.Model.transform(Model.java:234)
+	at savilerow.ModelContainer.instancePreFlattening1(ModelContainer.java:207)
+	at savilerow.ModelContainer.process(ModelContainer.java:44)
+	at savilerow.SRWorkThread.run(SRWorkThread.java:89)
+
+    Savile Row exit-code: 0
+1432_mesh
+removed './mesh.essence'
+removed './1432.param'
+
