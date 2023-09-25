@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Define the source directory and destination directory
-source_dir="./temp/TestVincBivincLen10"
+source_dir="./temp/Test132RandoPattern"
 destination_dir="./results"
 
 # Check if the source directory exists
