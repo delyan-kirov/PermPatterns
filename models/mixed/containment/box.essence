@@ -1,4 +1,4 @@
-$ This of mesh patterns to contain vincular pieces.
+$ This of mesh patterns to contain box pieces.
 given boxed_mesh_containment : set of sequence(injective) of int
 
 $ The permutation we are searching for (1..length is the permutation)
@@ -33,5 +33,10 @@ such that
                   exists j : int(1..|av|-1) .
                     exists z: int(ix[i]+1..ix[i+1]-1). (permPadded[ix[avinv[j]]] <= permPadded[z] /\ permPadded[z] <= permPadded[ix[avinv[j+1]]])
             ) \/ 
-             $ Vincular pieces
-             (forAll bar in bars . ix[bar] + 1 = ix[bar+1])
+             $ Box pieces
+         !(
+                $ If we find the pattern, make sure there is at least one value in some cell of the box-mesh
+                exists i : int(1..|av|-1) .
+                  exists j : int(1..|av|-1) .
+                    exists z: int(ix[i]+1..ix[i+1]-1). (permPadded[ix[avinv[j]]] <= permPadded[z] /\ permPadded[z] <= permPadded[ix[avinv[j+1]]])
+            )  
