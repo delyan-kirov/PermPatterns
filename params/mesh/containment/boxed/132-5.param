@@ -3,6 +3,6 @@ $ boxed mixed mesh
 
 letting length be 5
 
-$ mesh_avoidance = permutation + mesh pieces
+$ mesh_containment = permutation + mesh pieces
 
-letting mesh_avoidance be { (sequence(1,3,2), relation( (1, 1), (1, 2), (2, 1), (2, 2) )) }
+letting mesh_containment be { (sequence(1,3,2), relation( (1, 1), (1, 2), (2, 1), (2, 2) )) }

@@ -26,7 +26,8 @@ meshBoxAvoidParams=../params/mesh/avoidance/boxed/
 
 #
 
-results=../results
+results=../results/avoidance
+mkdir -p $results
 count=1
 
 #
@@ -42,6 +43,8 @@ for file in "$mixedBivincAvoidParams"*; do
   mv "conjure-output-mixed-$count" $results
   count=$((count+1)) 
 done
+
+echo Solving Mesh version
 
 for file in "$meshBivincAvoidParams"*; do
   #solve patterns
@@ -75,7 +78,7 @@ for file in "$meshVincAvoidParams"*; do
   mv -T conjure-output "conjure-output-mesh-$count"
   mv "conjure-output-mesh-$count" $results
   count=$((count+1)) 
-doneP
+done
 
 #
 

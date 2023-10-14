@@ -1,1 +1,0 @@
-There's no need to actually create the files, I can just coppy paste them and run a bash script to replace the avoidance patterns with the containment ones. 
