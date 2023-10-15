@@ -1,6 +1,5 @@
 # ToDo
 
-1. Create test param files
-2. Run Tests
-3. Update the visualization scripts
-4. Automate the param making process
+1. Update the visualizer
+2. Update the experiment folder
+3. Create the containment models.

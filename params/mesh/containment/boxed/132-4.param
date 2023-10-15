@@ -1,0 +1,8 @@
+language Essence 1.3
+$ boxed mixed mesh
+
+letting length be 4
+
+$ mesh_containment = permutation + mesh pieces
+
+letting mesh_containment be { (sequence(1,3,2), relation( (1, 1), (1, 2), (2, 1), (2, 2) )) }
